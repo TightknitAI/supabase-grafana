@@ -1,10 +1,22 @@
-app = "supagrafanaprom"
+# fly.toml app configuration file generated for tightknit-supabase-grafana on 2023-11-16T17:14:09-08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "tightknit-supabase-grafana"
+primary_region = "sjc"
+
+[build]
 
 [env]
-  SUPABASE_PROJECT_REF = "my_supabase_project_ref"
-  SUPABASE_SERVICE_ROLE_KEY = "my_service_role_key"
-  PASSWORD_PROTECTED = "false"
-  GRAFANA_PASSWORD = "my_password"
+  GRAFANA_PASSWORD = "squareknotY2K"
+  PASSWORD_PROTECTED = "true"
+  SUPABASE_PROJECT_REF = "pthsiwxwiiowghdtkwlv"
+  SUPABASE_SERVICE_ROLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0aHNpd3h3aWlvd2doZHRrd2x2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4MjQ4MzE3NCwiZXhwIjoxOTk4MDU5MTc0fQ.9jcnoSm8hckgnnxhnspBUYSu75RMBEZHD5gFG8hABgw"
+
+[[mounts]]
+  source = "data"
+  destination = "/data"
 
 [http_service]
   internal_port = 3000
@@ -13,7 +25,3 @@ app = "supagrafanaprom"
   auto_start_machines = true
   min_machines_running = 1
   processes = ["app"]
-  
-[mounts]
-  source="data"
-  destination="/data"
